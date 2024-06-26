@@ -1,4 +1,4 @@
-package MultiThredding;
+package ThreadPool;
 
 public class NumberPrint implements Runnable{
     int num;
