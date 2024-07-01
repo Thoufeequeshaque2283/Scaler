@@ -1,4 +1,4 @@
-package AdderSubtracterDeadLock;
+package AdderSubtractorDeadLock;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -11,10 +11,11 @@ public class Client {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         Lock lock = new ReentrantLock();
+        Lock lock2 = new ReentrantLock();
         Value v = new Value();
         ExecutorService ex = Executors.newCachedThreadPool();
-        Adder add = new Adder(v,lock);
-        Subtractor sub = new Subtractor(v,lock);
+        Adder add = new Adder(v,lock,lock2);
+        Subtractor sub = new Subtractor(v,lock,lock2);
         Future<Void> future = ex.submit(add);
         Future<Void> future2 = ex.submit(sub);
 

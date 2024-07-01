@@ -1,4 +1,4 @@
-package AdderSubtracterDeadLock;
+package AdderSubtracterLock;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.locks.Lock;
